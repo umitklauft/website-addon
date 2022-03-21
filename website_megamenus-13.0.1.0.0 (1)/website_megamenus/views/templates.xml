@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	 <!--=============== Assets List================== -->
+	 <template id="assets_frontend_mega_menu" inherit_id="website.assets_frontend">
+        <xpath expr="link[last()]" position="after">
+			<link rel="stylesheet" type="text/css" href="/website_megamenus/static/src/scss/style.scss" />
+		</xpath>
+
+		<xpath expr="script[last()]" position="after">
+			 <script type="text/javascript" src="/website_megamenus/static/src/js/menu.js"/>
+		</xpath>
+
+	</template>			
+    <!--=============== Mega Menu List================== -->
+    <template id="megamenu_snippets" inherit_id="website.snippets">
+		 <xpath expr="//div[@id='snippet_mega_menu']/div[hasclass('o_panel_body')]" position="inside">
+			  <t t-snippet="website_megamenus.megamenu_1"
+               t-thumbnail="/website_megamenus/static/src/img/menu1.png"/>
+				<t t-snippet="website_megamenus.megamenu_2"
+               t-thumbnail="/website_megamenus/static/src/img/menu2.png"/>		
+               	<t t-snippet="website_megamenus.megamenu_3"
+               t-thumbnail="/website_megamenus/static/src/img/menu3.png"/>			
+               <t t-snippet="website_megamenus.megamenu_4"
+               t-thumbnail="/website_megamenus/static/src/img/menu4.png"/>			 
+				<t t-snippet="website_megamenus.megamenu_5"
+               t-thumbnail="/website_megamenus/static/src/img/menu5.png"/>			                
+				<t t-snippet="website_megamenus.megamenu_6"
+               t-thumbnail="/website_megamenus/static/src/img/menu6.png"/>	   
+               <t t-snippet="website_megamenus.megamenu_7"
+               t-thumbnail="/website_megamenus/static/src/img/menu7.png"/>	     
+                <t t-snippet="website_megamenus.megamenu_8"
+               t-thumbnail="/website_megamenus/static/src/img/menu8.png"/>	    
+               <t t-snippet="website_megamenus.megamenu_9"
+               t-thumbnail="/website_megamenus/static/src/img/menu9.png"/>	 
+               <t t-snippet="website_megamenus.megamenu_10"
+               t-thumbnail="/website_megamenus/static/src/img/menu10.png"/>	    
+               <t t-snippet="website_megamenus.megamenu_11"
+               t-thumbnail="/website_megamenus/static/src/img/menu11.png"/>	               
+		 </xpath>
+	</template>		
+	<!-- Mega menu 1 Start-->
+	<template id="megamenu_1" name="Mega Menu 1">
+        <section class="container-fluid py-3 px-3 megamenu_1">
+			  <div class="">
+            <div class="row">
+				<t t-set="menu1_title">First Menu</t>
+                <t t-set="menu2_title">Second Menu</t>
+                <t t-set="menu3_title">Third Menu</t>
+                <t t-set="menu4_title">fourth Menu</t>
+                <t t-set="menu5_title">Fifth Menu</t>
+                <t t-set="menu6_title">Last Menu</t>
+                <t t-foreach="[menu1_title, menu2_title, menu3_title, menu4_title,menu5_title,menu6_title]" t-as="menu_title">
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="img_container">
+                        <div class="">
+                            <img class="img img-responsive img-fluid d-block mx-auto" alt="Mega Menu Style 1"
+                                 src="/website_megamenus/static/src/img/350x250.jpg"></img>
+                        </div>
+                    </div>
+                    <section class="py-lg-3 py-md-3 py-sm-3 py-2 text-center text-sm-left">
+                         <nav class="nav flex-column">
+                            <t t-foreach="4" t-as="i">
+                                <t t-set="text">Menu Item %s</t>
+                                <t t-set="text" t-value="text % (i + 1)"/>
+                                <a href="#" class="nav-link" data-name="Menu Item"
+                                   t-esc="text"/>
+                            </t>
+                        </nav>
+                    </section>
+                </div>
+                </t>
+            </div>
+            </div>
+        </section>
+    </template>
+    <!-- Mega menu 1 End -->
+    <!-- Mega menu 2 Start -->
+     <template id="megamenu_2" name="Mega Menu 2">
+        <section class="container-fluid py-3 px-3 megamenu_2">
+			  <div class="">
+            <div class="row">
+                <div class="col-lg-9 align-self-center">
+                    <div class="row">
+                         <t t-set="menu1_title">First Menu</t>
+						<t t-set="menu2_title">Second Menu</t>
+						<t t-set="menu3_title">Third Menu</t>
+						<t t-set="menu4_title">Last Menu</t>
+						<t t-foreach="[menu1_title, menu2_title, menu3_title, menu4_title]" t-as="menu_title">
+							<div class="col-lg-3 col-sm-6 py-2">
+								<h5 t-esc="menu_title"/>
+								<nav class="nav flex-column">
+									<t t-foreach="3" t-as="i">
+										<t t-set="text">Menu Item %s</t>
+										<t t-set="text" t-value="text % (i + 1)"/>
+										<a href="#" class="nav-link" data-name="Menu Item"
+										   t-esc="text"/>
+									</t>
+								</nav>
+							</div>
+						</t>
+                    </div>
+                </div>
+                <div class="col-lg-3 d-lg-block d-none">
+                    <section class="m2_right_img">
+                        <img class="img img-responsive img-fluid d-block mx-auto" alt="Mega Menu Style 2"
+                             src="/website_megamenus/static/src/img/350x350.jpg"/>
+                    </section>
+                </div>
+            </div>
+            </div>
+        </section>
+    </template>
+    <!-- Mega menu 2 End -->   
+    <!-- Mega menu 3 Start -->
+    <template id="megamenu_3" name="Mega Menu 3">
+		<section class="container-fluid py-3 px-3 megamenu_3">
+			  <div class="">
+			<div class="row">
+				<t t-set="menu1_title">First Menu</t>
+                <t t-set="menu2_title">Second Menu</t>
+                <t t-set="menu3_title">Third Menu</t>
+                <t t-set="menu4_title">fourth Menu</t>
+                <t t-set="menu5_title">Fifth Menu</t>
+                <t t-foreach="[menu1_title, menu2_title, menu3_title, menu4_title,menu5_title,menu6_title]" t-as="menu_title">
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                    <section class="py-lg-3 py-md-3 py-sm-3 py-2">
+                         <nav class="nav flex-column">
+                            <t t-foreach="4" t-as="i">
+                                <t t-set="text">Menu Item %s</t>
+                                <t t-set="text" t-value="text % (i + 1)"/>
+                                <a href="#" class="nav-link" data-name="Menu Item"
+                                   t-esc="text"/>
+                            </t>
+                        </nav>
+                    </section>
+                </div>
+                </t>
+                </div>
+                </div>
+                <section class="img_row">
+					  <div class="">
+					<div class="row">	
+						<div class="col-md-4">
+							<section class="py-lg-3 py-md-3 py-sm-3 py-2 text-center text-sm-left">		
+								<div class="box-image-menu">
+									<div class="banner-image"> <img class="img img-responsive img-fluid d-block mx-auto" alt="Mega Menu Style 2"
+										src="/website_megamenus/static/src/img/400x200.jpg"/></div>
+								</div>
+							</section>
+						</div>
+						<div class="col-md-4">
+							<section class="py-lg-3 py-md-3 py-sm-3 py-2 text-center text-sm-left">		
+								<div class="box-image-menu">
+									<div class="banner-image"> <img class="img img-responsive img-fluid d-block mx-auto" alt="Mega Menu Style 2"
+										src="/website_megamenus/static/src/img/400x200.jpg"/></div>
+								</div>
+							</section>
+						</div>
+						<div class="col-md-4">
+							<section class="py-lg-3 py-md-3 py-sm-3 py-2 text-center text-sm-left">		
+								<div class="box-image-menu">
+									<div class="banner-image"> <img class="img img-responsive img-fluid d-block mx-auto" alt="Mega Menu Style 2"
+										src="/website_megamenus/static/src/img/400x200.jpg"/></div>
+								</div>
+							</section>
+						</div>
+						</div>
+					</div>
+				</section>
+		</section>
+	</template>
+<!-- Mega menu 3 End -->
+<!-- Mega menu 4 Start -->
+    <template id="megamenu_4" name="Mega Menu 4">
+		<section class="container-fluid py-3 px-3 megamenu_4">
+			  <div class="">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="">
+						<a href="#"><img src="/website_megamenus/static/src/img/300x300.jpg" class="img img-responsive img-fluid d-block mx-auto"> </img></a>
+					</div>
+					<a href="#" class="nav-link"><h5 class="text-center">Menu Item 1</h5></a>
+				</div>
+				<div class="col-md-3">
+					<div class="">
+						<a href="#"><img src="/website_megamenus/static/src/img/300x300.jpg" class="img img-responsive img-fluid d-block mx-auto"> </img></a>
+					</div>
+					<a href="#" class="nav-link"><h5 class="text-center">Menu Item 2</h5></a>
+				</div>
+				<div class="col-md-3">
+					<div class="">
+						<a href="#"><img src="/website_megamenus/static/src/img/300x300.jpg" class="img img-responsive img-fluid d-block mx-auto"> </img></a>
+					</div>
+					<a href="#" class="nav-link"><h5 class="text-center">Menu Item 3</h5></a>
+				</div>
+				<div class="col-md-3">
+					<div class="">
+						<a href="#"><img src="/website_megamenus/static/src/img/300x300.jpg" class="img img-responsive img-fluid d-block mx-auto"> </img></a>
+					</div>
+					<a href="#" class="nav-link"><h5 class="text-center">Menu Item 4</h5></a>
+				</div>
+			</div>
+			</div>
+		</section>
+	</template>
+<!-- Mega menu 4 End -->
+<!-- Mega menu 5 Start -->
+ <template id="megamenu_5" name="Mega Menu 5">
+	 <section class="container-fluid py-3 px-3 megamenu_5">
+		   <div class="">
+			<div class="row">
+                            <div class="col-md-9 col-xs-12">
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="m5_ctg_ind">
+                                            <div class="m5_category_img">
+                                                <a href="#">
+                                                   <img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img>
+                                                </a>
+                                            </div>
+                                           
+                                            <div class="m5_category_name">
+                                                <a href="#" class="nav-link">
+													Menu Item 
+                                                </a>
+                                            </div>     
+                                        </div>
+                                    </div>
+                                
+                                   <div class="col-md-3 col-sm-6">
+                                        <div class="m5_ctg_ind">
+                                            <div class="m5_category_img">
+                                                <a href="#">
+                                                   <img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img>
+                                                </a>
+                                            </div>
+                                           
+                                            <div class="m5_category_name">
+                                                <a href="#" class="nav-link">
+													Menu Item 
+                                                </a>
+                                            </div>     
+                                        </div>
+                                    </div>
+                                    
+									<div class="col-md-3 col-sm-6">
+                                        <div class="m5_ctg_ind">
+                                            <div class="m5_category_img">
+                                                <a href="#">
+                                                   <img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img>
+                                                </a>
+                                            </div>
+                                           
+                                            <div class="m5_category_name">
+                                                <a href="#" class="nav-link">
+													Menu Item 
+                                                </a>
+                                            </div>     
+                                        </div>
+                                    </div>
+                                
+                                   <div class="col-md-3 col-sm-6">
+                                        <div class="m5_ctg_ind">
+                                            <div class="m5_category_img">
+                                                <a href="#">
+                                                   <img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img>
+                                                </a>
+                                            </div>
+                                           
+                                            <div class="m5_category_name">
+                                                <a href="#" class="nav-link">
+													Menu Item 
+                                                </a>
+                                            </div>     
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="m5_ctg_ind">
+                                            <div class="m5_category_img">
+                                                <a href="#">
+                                                   <img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img>
+                                                </a>
+                                            </div>
+                                           
+                                            <div class="m5_category_name">
+                                                <a href="#" class="nav-link">
+													Menu Item 
+                                                </a>
+                                            </div>     
+                                        </div>
+                                    </div>
+                                
+									<div class="col-md-3 col-sm-6">
+                                        <div class="m5_ctg_ind">
+                                            <div class="m5_category_img">
+                                                <a href="#">
+                                                   <img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img>
+                                                </a>
+                                            </div>
+                                           
+                                            <div class="m5_category_name">
+                                                <a href="#" class="nav-link">
+													Menu Item 
+                                                </a>
+                                            </div>     
+                                        </div>
+                                    </div>
+                                
+                                     <div class="col-md-3 col-sm-6">
+                                        <div class="m5_ctg_ind">
+                                            <div class="m5_category_img">
+                                                <a href="#">
+                                                   <img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img>
+                                                </a>
+                                            </div>
+                                           
+                                            <div class="m5_category_name">
+                                                <a href="#" class="nav-link">
+													Menu Item 
+                                                </a>
+                                            </div>     
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="m5_ctg_ind">
+                                            <div class="m5_category_img">
+                                                <a href="#">
+                                                   <img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img>
+                                                </a>
+                                            </div>
+                                           
+                                            <div class="m5_category_name">
+                                                <a href="#" class="nav-link">
+													Menu Item 
+                                                </a>
+                                            </div>     
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-xs-12" style="">
+										<div class="img_banner_div">
+											<img class="img img-responsive img-fluid d-block mx-auto" alt="Menu 5" src="/website_megamenus/static/src/img/250x250.jpg"></img>
+										</div>
+										 <div class="m5_category_name">
+											<a href="#" class="nav-link">
+													Menu Item 
+											 </a>
+										</div>    
+									</div> 
+								</div>
+                </div>
+           </section>
+</template>
+<!-- Mega menu 5 End -->
+<!-- Mega menu 6 Start -->
+ <template id="megamenu_6" name="Mega Menu 6">
+	 <section class="container-fluid py-3 px-3 megamenu_6">
+		   <div class="">
+			<div class="row">
+				<!-- Column Start -->
+				<div class="col-md-4">
+					<h5>Product Title</h5>
+					<!-- Product Start -->
+					<div class="product_ind">
+						<div class="row align-items-center">
+							<div class="col-4">
+								<a href="#"><img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img></a>
+							</div>
+							<div class="col-8">
+								<h6><a href="#" class="m6_prod_name">
+									Product Name
+                                 </a>
+                                 </h6>
+                                  <del class="regular_price text-danger mr-2">$21.5</del>
+                                 <span class="disc_price">$16.5</span>
+							</div>
+						</div>
+					</div>
+					<!-- Product End -->
+					<!-- Product Start -->
+					<div class="product_ind">
+						<div class="row align-items-center">
+							<div class="col-4">
+								<a href="#"><img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img></a>
+							</div>
+							<div class="col-8">
+								<h6><a href="#" class="m6_prod_name">
+									Product Name
+                                 </a>
+                                 </h6>
+                                  <del class="regular_price text-danger mr-2">$21.5</del>
+                                 <span class="disc_price">$16.5</span>
+							</div>
+						</div>
+					</div>
+					<!-- Product End -->
+					<!-- Product Start -->
+					<div class="product_ind">
+						<div class="row align-items-center">
+							<div class="col-4">
+								<a href="#"><img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img></a>
+							</div>
+							<div class="col-8">
+								<h6><a href="#" class="m6_prod_name">
+									Product Name
+                                 </a>
+                                 </h6>
+                                  <del class="regular_price text-danger mr-2">$21.5</del>
+                                 <span class="disc_price">$16.5</span>
+							</div>
+						</div>
+					</div>
+					<!-- Product End -->
+				</div>
+				<!-- Column End -->
+				<!-- Column Start -->
+				<div class="col-md-4">
+					<h5>Product Title</h5>
+					<!-- Product Start -->
+					<div class="product_ind">
+						<div class="row align-items-center">
+							<div class="col-4">
+								<a href="#"><img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img></a>
+							</div>
+							<div class="col-8">
+								<h6><a href="#" class="m6_prod_name">
+									Product Name
+                                 </a>
+                                 </h6>
+                                  <del class="regular_price text-danger mr-2">$21.5</del>
+                                 <span class="disc_price">$16.5</span>
+							</div>
+						</div>
+					</div>
+					<!-- Product End -->
+					<!-- Product Start -->
+					<div class="product_ind">
+						<div class="row align-items-center">
+							<div class="col-4">
+								<a href="#"><img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img></a>
+							</div>
+							<div class="col-8">
+								<h6><a href="#" class="m6_prod_name">
+									Product Name
+                                 </a>
+                                 </h6>
+                                 <del class="regular_price text-danger mr-2">$21.5</del>
+                                 <span class="disc_price">$16.5</span>
+							</div>
+						</div>
+					</div>
+					<!-- Product End -->
+					<!-- Product Start -->
+					<div class="product_ind">
+						<div class="row align-items-center">
+							<div class="col-4">
+								<a href="#"><img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img></a>
+							</div>
+							<div class="col-8">
+								<h6><a href="#" class="m6_prod_name">
+									Product Name
+                                 </a>
+                                 </h6>
+                                  <del class="regular_price text-danger mr-2">$21.5</del>
+                                 <span class="disc_price">$16.5</span>
+							</div>
+						</div>
+					</div>
+					<!-- Product End -->
+				</div>
+				<!-- Column End -->
+				<!-- Column Start -->
+				<div class="col-md-4">
+					<h5>Product Title</h5>
+					<!-- Product Start -->
+					<div class="product_ind">
+						<div class="row align-items-center">
+							<div class="col-4">
+								<a href="#"><img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img></a>
+							</div>
+							<div class="col-8">
+								<h6><a href="#" class="m6_prod_name">
+									Product Name
+                                 </a>
+                                 </h6>
+								 <del class="regular_price text-danger mr-2">$21.5</del>
+                                 <span class="disc_price">$16.5</span>
+							</div>
+						</div>
+					</div>
+					<!-- Product End -->
+					<!-- Product Start -->
+					<div class="product_ind">
+						<div class="row align-items-center">
+							<div class="col-4">
+								<a href="#"><img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img></a>
+							</div>
+							<div class="col-8">
+								<h6><a href="#" class="m6_prod_name">
+									Product Name
+                                 </a>
+                                 </h6>
+                                  <del class="regular_price text-danger mr-2">$21.5</del>
+                                 <span class="disc_price">$16.5</span>
+							</div>
+						</div>
+					</div>
+					<!-- Product End -->
+					<!-- Product Start -->
+					<div class="product_ind">
+						<div class="row align-items-center">
+							<div class="col-4">
+								<a href="#"><img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img></a>
+							</div>
+							<div class="col-8">
+								<h6><a href="#" class="m6_prod_name">
+									Product Name
+                                 </a>
+                                 </h6>
+                                 <del class="regular_price text-danger mr-2">$21.5</del>
+                                 <span class="disc_price">$16.5</span>
+							</div>
+						</div>
+					</div>
+					<!-- Product End -->
+				</div>
+				<!-- Column End -->
+			</div>
+			</div>
+	</section>
+</template>
+	 <!-- Mega menu 6 End -->
+	 <!-- Mega menu 7 Start -->
+ <template id="megamenu_7" name="Mega Menu 7">
+	 <section class="container-fluid py-3 px-3 megamenu_7">
+		   <div class="">
+			<div class="row">
+		<div class="inner col-sm-6 col-xs-12">
+			<div class="row">
+				<t t-set="menu1_title">First Menu</t>
+                <t t-set="menu2_title">Second Menu</t>
+                <t t-foreach="[menu1_title, menu2_title]" t-as="menu_title">
+                    <div class="col-sm-6">
+                    <section class="py-lg-0 py-md-3 py-sm-3 py-2">
+						<h5 t-esc="menu_title"/>
+                         <nav class="nav flex-column">
+                            <t t-foreach="6" t-as="i">
+                                <t t-set="text">Menu Item %s</t>
+                                <t t-set="text" t-value="text % (i + 1)"/>
+                                <a href="#" class="nav-link" data-name="Menu Item"
+                                   t-esc="text"/>
+                            </t>
+                        </nav>
+                    </section>
+                </div>
+                </t>
+                </div>
+		</div>
+		<div class="col-md-6 col-sm-6 mega-img">
+			<div class="row">
+				<div class="col-sm-4 col-12">
+					<a href="#">
+						<img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/160x300.jpg" alt=""></img>
+					</a>
+				</div>
+				<div class="col-sm-4 col-12">
+					<a href="#">
+						<img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/160x300.jpg" alt=""></img>
+					</a>
+				</div>
+				<div class="col-sm-4 col-12">
+					<a href="#">
+						<img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/160x300.jpg" alt=""></img>
+					</a>
+				</div>				
+			</div>
+		</div>
+		</div>
+		</div>
+	</section>
+</template>
+	 <!-- Mega menu 7 End -->
+	 <!-- Mega menu 8 Start -->
+<template id="megamenu_8" name="Mega Menu 8">
+	 <section class="container-fluid py-3 px-3 megamenu_8">
+       <div class="">
+        <div class="row">
+			<div class="col-lg-3 m8_left_content col-sm-6">
+				<h5 class="m8_title">About Company</h5>
+				<div class="s_hr text-left pb16 pt8">
+					<hr class="s_hr_solid w-4 mr-auto s_hr_2px border-alpha" style="width: 30px;"/>
+				</div>
+				<div>
+					<img class="img img-responsive img-fluid d-block" alt="Menu 8" src="/website_megamenus/static/src/img/250x150.jpg"></img>
+				</div>
+				<p class="">Write one or two paragraphs describing your product or services.To be successful your content needs to be useful to your readers.</p>
+				<div class="s_btn pt16 pb16" data-name="Buttons">
+					<a href="#" class="btn btn-primary">Read more</a>
+				</div>
+			</div>
+			<div class="col-lg-4 m8_latest_blog col-sm-6">
+				<h5 class="m8_title">Recent Posts</h5>
+				<div class="s_hr text-left pb16 pt8">
+                <hr class="s_hr_solid w-4 mr-auto s_hr_2px border-alpha" style="width: 30px;"/>
+              </div>
+				<div class="m8_blog">
+					<div class="recent_blog_ind row">
+						<div class="col-4">
+							<a href="#"><img class="img img-responsive img-fluid d-block mx-sm-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img></a>
+						</div>
+						<div class="col-8">
+							<a href="#"><h6 class="m8_blog_title">
+								Blog Name
+							</h6></a>
+							<span class="m8_blog_date">December 20,2019</span>
+							<p class="m8_blog_ctg">Blog Category</p>
+							<a class="btn-link" href="#">Read More <i class="fa fa-angle-right"></i></a>
+						</div>
+					</div>
+					<div class="recent_blog_ind row">
+						<div class="col-4">
+							<a href="#"><img class="img img-responsive img-fluid d-block mx-sm-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img></a>
+						</div>
+						<div class="col-8">
+							<a href="#"><h6 class="m8_blog_title">
+								Blog Name
+							</h6></a>
+							<span class="m8_blog_date">December 20,2019</span>
+							<p class="m8_blog_ctg">Blog Category</p>
+							<a class="btn-link" href="#">Read More <i class="fa fa-angle-right"></i></a>
+						</div>
+					</div>
+					<div class="recent_blog_ind row">
+						<div class="col-4">
+							<a href="#"><img class="img img-responsive img-fluid d-block mx-sm-auto" src="/website_megamenus/static/src/img/100x100.jpg"></img></a>
+						</div>
+						<div class="col-8">
+							<a href="#"><h6 class="m8_blog_title">
+								Blog Name
+							</h6></a>
+							<span class="m8_blog_date">December 20,2019</span>
+							<p class="m8_blog_ctg">Blog Category</p>
+							<a class="btn-link" href="#">Read More <i class="fa fa-angle-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-2 m8_menu_container col-sm-6">
+				<h5 class="m8_title">Menu Title</h5>
+				<div class="s_hr text-left pb16 pt8">
+                <hr class="s_hr_solid w-4 mr-auto s_hr_2px border-alpha" style="width: 30px;"/>
+              </div>
+				<nav class="nav flex-column">
+                            <t t-foreach="6" t-as="i">
+                                <t t-set="text">Menu Item %s</t>
+                                <t t-set="text" t-value="text % (i + 1)"/>
+                                <a href="#" class="nav-link" data-name="Menu Item"
+                                   t-esc="text"/>
+                            </t>
+                        </nav>
+			</div>
+			<div class="col-lg-3 m8_img col-sm-6  d-none d-sm-block">
+					<a href="#">
+						<img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/300x450.jpg" alt="Menu 8"></img>
+					</a>
+			</div>
+		</div>
+		</div>
+	</section>
+</template>	 
+	 <!-- Mega menu 8 End -->
+	 <!-- Mega menu 9 Start -->
+	<template id="megamenu_9" name="Mega Menu 9">
+	 <section class="container-fluid py-3 px-3 megamenu_9">
+       <div class="">
+        <div class="row">
+			<div class="col-lg-4">
+			<section><h5>Menu Title</h5></section>
+				<div class="m9_menu_item row">
+					<div class="m9_icon col-2">
+						<i class="fa fa-envelope-o"></i>
+					</div>
+					<div class="m9_detail col-10">
+						<a href="#"><h6>Menu Item 1</h6></a>
+						<p>Write one or two paragraphs describing your product or services.</p>
+					</div>
+				</div>
+				<div class="m9_menu_item row">
+					<div class="m9_icon col-2">
+						<i class="fa fa-star-o"></i>
+					</div>
+					<div class="m9_detail col-10">
+						<a href="#"><h6>Menu Item 1</h6></a>
+						<p>Write one or two paragraphs describing your product or services.</p>
+					</div>
+				</div>
+				<div class="m9_menu_item row">
+					<div class="m9_icon col-2">
+						<i class="fa fa-mixcloud"></i>
+					</div>
+					<div class="m9_detail col-10">
+						<a href="#"><h6>Menu Item 1</h6></a>
+						<p>Write one or two paragraphs describing your product or services.</p>
+					</div>
+				</div>				
+			</div>
+					<div class="col-lg-4">
+				<section><h5>Menu Title</h5></section>
+				<div class="m9_menu_item row">
+					<div class="m9_icon col-2">
+						<i class="fa fa-envelope-o"></i>
+					</div>
+					<div class="m9_detail col-10">
+						<a href="#"><h6>Menu Item 1</h6></a>
+						<p>Write one or two paragraphs describing your product or services.</p>
+					</div>
+				</div>
+				<div class="m9_menu_item row">
+					<div class="m9_icon col-2">
+						<i class="fa fa-star-o"></i>
+					</div>
+					<div class="m9_detail col-10">
+						<a href="#"><h6>Menu Item 1</h6></a>
+						<p>Write one or two paragraphs describing your product or services.</p>
+					</div>
+				</div>
+				<div class="m9_menu_item row">
+					<div class="m9_icon col-2">
+						<i class="fa fa-mixcloud"></i>
+					</div>
+					<div class="m9_detail col-10">
+						<a href="#"><h6>Menu Item 1</h6></a>
+						<p>Write one or two paragraphs describing your product or services.</p>
+					</div>
+				</div>				
+			</div>			
+			<div class="col-lg-4">
+				<section><h5>Menu Title</h5></section>
+				<div class="m9_menu_item row">
+					<div class="m9_icon col-2">
+						<i class="fa fa-envelope-o"></i>
+					</div>
+					<div class="m9_detail col-10">
+						<a href="#"><h6>Menu Item 1</h6></a>
+						<p>Write one or two paragraphs describing your product or services.</p>
+					</div>
+				</div>
+				<div class="m9_menu_item row">
+					<div class="m9_icon col-2">
+						<i class="fa fa-star-o"></i>
+					</div>
+					<div class="m9_detail col-10">
+						<a href="#"><h6>Menu Item 1</h6></a>
+						<p>Write one or two paragraphs describing your product or services.</p>
+					</div>
+				</div>
+				<div class="m9_menu_item row">
+					<div class="m9_icon col-2">
+						<i class="fa fa-mixcloud"></i>
+					</div>
+					<div class="m9_detail col-10">
+						<a href="#"><h6>Menu Item 1</h6></a>
+						<p>Write one or two paragraphs describing your product or services.</p>
+					</div>
+				</div>				
+			</div>
+		
+		</div>
+		</div>
+	</section>
+	</template>
+	<!-- Mega menu 9 End -->
+		 <!-- Mega menu 10 Start -->
+	<template id="megamenu_10" name="Mega Menu 10">
+	 <section class="container-fluid py-3 px-3 megamenu_10">
+        <div class="row">
+			<div class="col-12 pt16 pb16"  id="m10_tabs">
+                    <div class="card bg-white">
+                        <div class="card-header">
+                            <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active"
+                                        id="nav_tabs_link_1"
+                                        data-toggle="tab"
+                                        href="#nav_tabs_content_1"
+                                        role="tab"
+                                        aria-controls="nav_tabs_content_1"
+                                        aria-selected="true">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                        id="nav_tabs_link_2"
+                                        data-toggle="tab"
+                                        href="#nav_tabs_content_2"
+                                        role="tab"
+                                        aria-controls="nav_tabs_content_2"
+                                        aria-selected="false">Profile</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                        id="nav_tabs_link_3"
+                                        data-toggle="tab"
+                                        href="#nav_tabs_content_3"
+                                        role="tab"
+                                        aria-controls="nav_tabs_content_3"
+                                        aria-selected="false">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body tab-content">
+                            <section class="tab-pane fade show active"
+                                id="nav_tabs_content_1"
+                                role="tabpanel"
+                                aria-labelledby="nav_tabs_link_1">
+                                     <div class="">
+                               <div class="row">
+                               <t t-set="menu1_title">First Menu</t>
+								<t t-set="menu2_title">Second Menu</t>
+								<t t-set="menu3_title">Third Menu</t>
+								<t t-set="menu4_title">fourth Menu</t>
+								<t t-set="menu5_title">Fifth Menu</t>
+								<t t-foreach="[menu1_title, menu2_title, menu3_title, menu4_title,menu5_title,menu6_title]" t-as="menu_title">
+									<div class="col-lg-2 col-md-4 col-sm-6">
+									<section class="py-lg-3 py-md-3 py-sm-3 py-2">
+										 <nav class="nav flex-column">
+											<t t-foreach="4" t-as="i">
+												<t t-set="text">Menu Item %s</t>
+												<t t-set="text" t-value="text % (i + 1)"/>
+												<a href="#" class="nav-link" data-name="Menu Item"
+												   t-esc="text"/>
+											</t>
+										</nav>
+									</section>
+								</div>
+								</t>   
+								</div>
+								</div>
+							</section>
+                            <section class="tab-pane fade"
+                                id="nav_tabs_content_2"
+                                role="tabpanel"
+                                aria-labelledby="nav_tabs_link_2">
+                                    <div class="">
+                               <div class="row">
+                               <t t-set="menu1_title">First Menu</t>
+								<t t-set="menu2_title">Second Menu</t>
+								<t t-set="menu3_title">Third Menu</t>
+								<t t-set="menu4_title">fourth Menu</t>
+								<t t-set="menu5_title">Fifth Menu</t>
+								<t t-foreach="[menu1_title, menu2_title, menu3_title, menu4_title,menu5_title,menu6_title]" t-as="menu_title">
+									<div class="col-lg-2 col-md-4 col-sm-6">
+									<section class="py-lg-3 py-md-3 py-sm-3 py-2">
+										 <nav class="nav flex-column">
+											<t t-foreach="4" t-as="i">
+												<t t-set="text">Menu Item %s</t>
+												<t t-set="text" t-value="text % (i + 1)"/>
+												<a href="#" class="nav-link" data-name="Menu Item"
+												   t-esc="text"/>
+											</t>
+										</nav>
+									</section>
+								</div>
+								</t>   
+								</div>
+								</div>
+	    </section>
+                            <section class="tab-pane fade"
+                                id="nav_tabs_content_3"
+                                role="tabpanel"
+                                aria-labelledby="nav_tabs_link_3">
+                                     <div class="">
+                               <div class="row">
+                               <t t-set="menu1_title">First Menu</t>
+								<t t-set="menu2_title">Second Menu</t>
+								<t t-set="menu3_title">Third Menu</t>
+								<t t-set="menu4_title">fourth Menu</t>
+								<t t-set="menu5_title">Fifth Menu</t>
+								<t t-foreach="[menu1_title, menu2_title, menu3_title, menu4_title,menu5_title,menu6_title]" t-as="menu_title">
+									<div class="col-lg-2 col-md-4 col-sm-6">
+									<section class="py-lg-3 py-md-3 py-sm-3 py-2">
+										 <nav class="nav flex-column">
+											<t t-foreach="4" t-as="i">
+												<t t-set="text">Menu Item %s</t>
+												<t t-set="text" t-value="text % (i + 1)"/>
+												<a href="#" class="nav-link" data-name="Menu Item"
+												   t-esc="text"/>
+											</t>
+										</nav>
+									</section>
+								</div>
+								</t>   
+								</div>
+								</div>
+	
+                            </section>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</section>
+	</template>
+	 <!-- Mega menu 10 End -->
+	 <!-- Mega menu 11 Start -->
+	<template id="megamenu_11" name="Mega Menu 11">
+	 <section class="container-fluid py-3 px-3 megamenu_11">
+       <div class="">
+			<div class="row">
+				<div class="col-md-6">
+					<h5>Menu Title</h5>
+					<div class="row">
+						<t t-set="menu1_title">First Menu</t>
+						<t t-set="menu2_title">Second Menu</t>
+						<t t-foreach="[menu1_title, menu2_title]" t-as="menu_title">
+							<div class="col-sm-6">
+							<section class="py-lg-3 py-md-3 py-sm-3 py-2">
+								 <nav class="nav flex-column">
+									<t t-foreach="6" t-as="i">
+										<t t-set="text">Menu Item %s</t>
+										<t t-set="text" t-value="text % (i + 1)"/>
+										<a href="#" class="nav-link" data-name="Menu Item"
+										   t-esc="text"/>
+									</t>
+								</nav>
+							</section>
+						</div>
+						</t>
+					</div>
+				</div>
+				<div class="col-md-6 px-md-5 m11_border">
+					<section class="m11_logo_img my-3">
+							<img class="img img-responsive img-fluid d-block mx-auto" src="/website_megamenus/static/src/img/400x90.png" alt="Menu 11"></img>
+					</section>
+					<section class="m11_desc">
+						<p>Write one or two paragraphs describing your product, services or a specific feature.To be successful your content needs to be useful to your readers.</p>
+					</section>
+					<div class="s_btn pt16 pb16" data-name="Buttons">
+						<a href="#" class="btn btn-primary w-100 btn-lg">Read more</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	</template>
+	<!-- Mega menu 11 End -->
+</odoo>
+		
